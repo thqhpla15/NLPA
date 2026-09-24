@@ -1,0 +1,26 @@
+query,rank,document_id,similarity
+medical image classification,1,18971,0.4000297166644311
+medical image classification,2,8527,0.3499981106388897
+medical image classification,3,19908,0.25342673183601994
+medical image classification,4,17794,0.24050716042338552
+medical image classification,5,12658,0.2331445075113204
+transformer language model,1,27936,0.47184859061867623
+transformer language model,2,25428,0.27910253909199134
+transformer language model,3,4075,0.22268670391834314
+transformer language model,4,701,0.21609620949515373
+transformer language model,5,13690,0.2136173117907234
+deep learning healthcare,1,9252,0.2781743670016176
+deep learning healthcare,2,6123,0.2752763462071172
+deep learning healthcare,3,11119,0.27471869985096053
+deep learning healthcare,4,11979,0.27302738015545386
+deep learning healthcare,5,7564,0.24048707598820115
+natural language processing,1,25428,0.3622655551871724
+natural language processing,2,8705,0.34178868909750415
+natural language processing,3,4075,0.2890397295926817
+natural language processing,4,5699,0.2829147241751635
+natural language processing,5,701,0.28048549311406706
+computer vision,1,3820,0.46807209777319075
+computer vision,2,21344,0.42153386228253464
+computer vision,3,15116,0.3827241706550125
+computer vision,4,28397,0.3492167512036021
+computer vision,5,17379,0.3456156336439786
