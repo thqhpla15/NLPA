@@ -2,7 +2,7 @@
 
 **Prediction 1:**
 
-Nếu corpus có 30K documents, vocabulary sẽ có **khoảng 60.000 unique terms**
+Nếu corpus có 30K documents, vocabulary sẽ có **khoảng 600.000 unique terms**
 
 **Prediction 2 — Sparsity**
 
