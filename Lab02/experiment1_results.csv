@@ -1,0 +1,10 @@
+Metric,Value
+Number of documents,30000
+Number of tokens,10876052
+Vocabulary size,177185
+Unique unigrams,177185
+Unique bigrams,2930434
+Unique trigrams,7275295
+Singleton unigrams,83694
+Singleton bigrams,2107393
+Singleton trigrams,6324328
