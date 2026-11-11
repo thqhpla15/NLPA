@@ -1,0 +1,13 @@
+# Reflection
+
+Sau LAB 07, em đã biết cách xây dựng Transformer từ các thành phần như self-attention, multi-head attention, positional encoding và feed-forward network. Tuy nhiên, xây dựng được kiến trúc mới chỉ giải quyết phần cấu trúc của model. Để thực hiện tốt một nhiệm vụ NLP, model vẫn cần học các biểu diễn ngôn ngữ phù hợp từ dữ liệu. Đây là lý do pretraining có vai trò quan trọng trong các ứng dụng NLP hiện đại.
+
+Nếu huấn luyện Transformer từ đầu, model phải học nhiều đặc điểm ngôn ngữ chỉ từ downstream dataset. Với IMDb, dữ liệu có thể đủ để huấn luyện một bộ phân loại cơ bản, nhưng chưa chắc đủ để model học được biểu diễn phong phú về từ vựng, ngữ cảnh và quan hệ giữa các từ. Quá trình này cũng cần nhiều thời gian và tài nguyên tính toán. Khi dataset nhỏ, model có thể học thuộc dữ liệu huấn luyện thay vì khái quát tốt sang dữ liệu mới.
+
+Pretraining giải quyết một phần vấn đề bằng cách cho model tiếp xúc với lượng văn bản lớn trước khi đưa vào nhiệm vụ cụ thể. Ví dụ, BERT được huấn luyện với Masked Language Modeling để dự đoán token bị che trong câu. Qua nhiệm vụ này, model học contextual representations, nghĩa là biểu diễn của token phụ thuộc vào ngữ cảnh xung quanh. Khi chuyển sang sentiment classification, những biểu diễn đã học có thể được tận dụng thay vì bắt đầu từ trọng số ngẫu nhiên.
+
+Fine-tuning giúp điều chỉnh pretrained model theo downstream task. Với IMDb, classification head được thêm vào để dự đoán positive hoặc negative. Trong quá trình fine-tuning, cả classification head và các tham số encoder đều có thể được cập nhật. Nhờ vậy, model có thể điều chỉnh biểu diễn đã học để phù hợp hơn với movie reviews. Một lựa chọn khác là feature extraction: encoder được freeze và chỉ classification head được huấn luyện. Cách này tiết kiệm tài nguyên hơn nhưng khả năng thích nghi có thể hạn chế.
+
+Dù vậy, pretrained model không phải giải pháp hoàn hảo. Model vẫn có thể gặp domain shift khi dữ liệu thực tế khác dữ liệu pretraining hoặc fine-tuning. Tokenizer có giới hạn khi xử lý từ hiếm, tên riêng hoặc cách viết đặc thù. Sequence length cũng bị giới hạn, trong khi chi phí self-attention tăng theo bình phương độ dài chuỗi. Ngoài ra, fine-tuning quá mạnh trên một dataset nhỏ có thể làm model mất một phần kiến thức đã học trước đó, hiện tượng này được gọi là catastrophic forgetting.
+
+Vì vậy, trong thực tế, người ta thường chọn pretrained Transformer rồi fine-tune thay vì luôn huấn luyện từ đầu. Cách tiếp cận này tận dụng pretrained representations, giảm lượng downstream data cần thiết và thường tiết kiệm thời gian phát triển. Tuy nhiên, model vẫn cần được đánh giá trên dữ liệu phù hợp, kiểm tra lỗi và xem xét khả năng hoạt động ngoài domain huấn luyện.
